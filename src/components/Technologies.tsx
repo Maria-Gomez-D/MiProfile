@@ -1,0 +1,149 @@
+import React from 'react';
+import { Box, Container, Typography, Paper, Grid } from '@mui/material';
+import { motion } from 'framer-motion';
+import StorageIcon from '@mui/icons-material/Storage';
+import CloudIcon from '@mui/icons-material/Cloud';
+import AndroidIcon from '@mui/icons-material/Android'; // For Android
+import DataObjectIcon from '@mui/icons-material/DataObject'; // For Python
+import TerminalIcon from '@mui/icons-material/Terminal'; // For Linux/Bash
+
+interface TechnologyProps {
+  name: string;
+  icon: string | React.ReactNode;
+  isMaterialIcon?: boolean;
+}
+
+const technologies: TechnologyProps[] = [
+  { name: 'React', icon: '/tech-icons/react.svg' },
+  { name: 'Next.js', icon: '/tech-icons/nextjs.svg' },
+  { name: 'TypeScript', icon: '/tech-icons/typescript.svg' },
+  { name: 'JavaScript', icon: '/tech-icons/javascript.svg' },
+  { name: 'Tailwind', icon: '/tech-icons/tailwind.svg' },
+  { name: 'Node.js', icon: '/tech-icons/nodejs.svg' },
+  { name: 'Java', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'AWS', icon: <CloudIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'Vercel', icon: '/tech-icons/vercel.svg' },
+  { name: 'Firebase', icon: '/tech-icons/firebase.svg' },
+  { name: 'HTML5', icon: '/tech-icons/html5.svg' },
+  { name: 'CSS3', icon: '/tech-icons/css3.svg' },
+  { name: 'Figma', icon: '/tech-icons/figma.svg' },
+  { name: 'Git', icon: '/tech-icons/git.svg' },
+  { name: 'ESLint', icon: '/tech-icons/eslint.svg' },
+  { name: 'Docker', icon: '/tech-icons/docker.svg' },
+  { name: 'SQL', icon: '/tech-icons/sql.svg' },
+  { name: 'MongoDB', icon: '/tech-icons/mongodb.svg' },
+  { name: 'PostgreSQL', icon: '/tech-icons/postgresql.svg' },
+  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+];
+
+const Technologies = () => {
+  return (
+    <Box
+      id="technologies"
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      sx={{
+        py: 8,
+        background: 'linear-gradient(180deg, #1E293B 0%, #0F172A 100%)',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Typography
+          variant="h2"
+          component={motion.h2}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          sx={{
+            mb: 6,
+            textAlign: 'center',
+            background: 'linear-gradient(45deg, #60A5FA, #93C5FD)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            fontWeight: 'bold',
+          }}
+        >
+          Technologies & Tools
+        </Typography>
+
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            borderRadius: 4,
+            backgroundColor: 'rgba(15, 23, 42, 0.8)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(96, 165, 250, 0.1)',
+          }}
+        >
+          <Grid container spacing={2} justifyContent="center">
+            {technologies.map((tech, index) => (
+              <Grid item key={tech.name} xs={4} sm={3} md={2}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Paper
+                    elevation={0}
+                    sx={{
+                      p: 2,
+                      textAlign: 'center',
+                      backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                      border: '1px solid rgba(96, 165, 250, 0.1)',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                      },
+                    }}
+                  >
+                    {tech.isMaterialIcon ? (
+                      tech.icon
+                    ) : (
+                      <motion.img
+                        src={tech.icon as string}
+                        alt={tech.name}
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          marginBottom: '4px',
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      />
+                    )}
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        mt: 1,
+                        color: 'text.primary',
+                        fontWeight: 500,
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      {tech.name}
+                    </Typography>
+                  </Paper>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </Paper>
+      </Container>
+    </Box>
+  );
+};
+
+export default Technologies;
