@@ -2,7 +2,7 @@
   "name": "mi-profile",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maria-gomez-d.github.io/MiProfile",
+  "homepage": "https://maria-gomez-d.github.io/MiProfile/",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
