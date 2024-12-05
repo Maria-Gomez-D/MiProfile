@@ -1,44 +1,52 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import StorageIcon from '@mui/icons-material/Storage';
-import CloudIcon from '@mui/icons-material/Cloud';
-import AndroidIcon from '@mui/icons-material/Android'; // For Android
-import DataObjectIcon from '@mui/icons-material/DataObject'; // For Python
-import TerminalIcon from '@mui/icons-material/Terminal'; // For Linux/Bash
 import CodeIcon from '@mui/icons-material/Code';
 import DatabaseIcon from '@mui/icons-material/Storage';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+import AndroidIcon from '@mui/icons-material/Android';
+import DataObjectIcon from '@mui/icons-material/DataObject';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import HtmlIcon from '@mui/icons-material/Html';
+import CssIcon from '@mui/icons-material/Css';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import WebIcon from '@mui/icons-material/Web';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import BuildIcon from '@mui/icons-material/Build';
+import StorageIcon from '@mui/icons-material/Storage';
+import CloudCircleIcon from '@mui/icons-material/CloudCircle';
+import DnsIcon from '@mui/icons-material/Dns';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 
 interface TechnologyProps {
   name: string;
-  icon: string | React.ReactNode;
-  isMaterialIcon?: boolean;
+  icon: React.ReactNode;
 }
 
 const technologies: TechnologyProps[] = [
-  { name: 'React', icon: '/tech-icons/react.svg' },
-  { name: 'Next.js', icon: '/tech-icons/nextjs.svg' },
-  { name: 'TypeScript', icon: '/tech-icons/typescript.svg' },
-  { name: 'JavaScript', icon: '/tech-icons/javascript.svg' },
-  { name: 'Tailwind', icon: '/tech-icons/tailwind.svg' },
-  { name: 'Node.js', icon: '/tech-icons/nodejs.svg' },
-  { name: 'Java', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'AWS', icon: <CloudQueueIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'Vercel', icon: '/tech-icons/vercel.svg' },
-  { name: 'Firebase', icon: '/tech-icons/firebase.svg' },
-  { name: 'HTML5', icon: '/tech-icons/html5.svg' },
-  { name: 'CSS3', icon: '/tech-icons/css3.svg' },
-  { name: 'Figma', icon: '/tech-icons/figma.svg' },
-  { name: 'Git', icon: '/tech-icons/git.svg' },
-  { name: 'ESLint', icon: '/tech-icons/eslint.svg' },
-  { name: 'Docker', icon: '/tech-icons/docker.svg' },
-  { name: 'SQL', icon: <DatabaseIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'MongoDB', icon: '/tech-icons/mongodb.svg' },
-  { name: 'PostgreSQL', icon: '/tech-icons/postgresql.svg' },
-  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'React', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Next.js', icon: <WebIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'TypeScript', icon: <IntegrationInstructionsIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'JavaScript', icon: <JavascriptIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Tailwind', icon: <CssIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Node.js', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Java', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'AWS', icon: <CloudQueueIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Vercel', icon: <CloudCircleIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Firebase', icon: <DnsIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'HTML5', icon: <HtmlIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'CSS3', icon: <CssIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Figma', icon: <DesignServicesIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Git', icon: <GitHubIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'ESLint', icon: <BuildIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Docker', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'SQL', icon: <DatabaseIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'MongoDB', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'PostgreSQL', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
 ];
 
 const Technologies = () => {
@@ -112,25 +120,17 @@ const Technologies = () => {
                       },
                     }}
                   >
-                    {tech.isMaterialIcon ? (
-                      tech.icon
-                    ) : (
-                      <motion.img
-                        src={tech.icon as string}
-                        alt={tech.name}
-                        style={{
-                          width: '40px',
-                          height: '40px',
-                          marginBottom: '4px',
-                        }}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                      />
-                    )}
+                    <Box
+                      component={motion.div}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                      sx={{ mb: 1 }}
+                    >
+                      {tech.icon}
+                    </Box>
                     <Typography
                       variant="body2"
                       sx={{
-                        mt: 1,
                         color: 'text.primary',
                         fontWeight: 500,
                         fontSize: '0.875rem',
