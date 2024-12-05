@@ -14,9 +14,10 @@ interface TechnologyProps {
 
 // Función para obtener la ruta correcta del icono
 const getIconPath = (iconName: string) => {
-  // En desarrollo, process.env.PUBLIC_URL está vacío
-  // En producción, será /MiProfile
-  return `${process.env.PUBLIC_URL}/tech-icons/${iconName}`;
+  const baseUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://maria-gomez-d.github.io/MiProfile'
+    : '';
+  return `${baseUrl}/tech-icons/${iconName}`;
 };
 
 const technologies: TechnologyProps[] = [
