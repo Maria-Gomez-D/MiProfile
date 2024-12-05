@@ -1,23 +1,27 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-import CodeIcon from '@mui/icons-material/Code';
-import DatabaseIcon from '@mui/icons-material/Storage';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
-import AndroidIcon from '@mui/icons-material/Android';
-import DataObjectIcon from '@mui/icons-material/DataObject';
-import TerminalIcon from '@mui/icons-material/Terminal';
+// Core icons
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import HtmlIcon from '@mui/icons-material/Html';
 import CssIcon from '@mui/icons-material/Css';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import WebIcon from '@mui/icons-material/Web';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import BuildIcon from '@mui/icons-material/Build';
 import StorageIcon from '@mui/icons-material/Storage';
+import CodeIcon from '@mui/icons-material/Code';
+import AndroidIcon from '@mui/icons-material/Android';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import DataObjectIcon from '@mui/icons-material/DataObject';
+// Cloud and deployment icons
+import CloudIcon from '@mui/icons-material/Cloud';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import CloudCircleIcon from '@mui/icons-material/CloudCircle';
-import DnsIcon from '@mui/icons-material/Dns';
+// Development tools
+import BuildIcon from '@mui/icons-material/Build';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import WebIcon from '@mui/icons-material/Web';
+import DnsIcon from '@mui/icons-material/Dns';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
 
 interface TechnologyProps {
   name: string;
@@ -25,28 +29,94 @@ interface TechnologyProps {
 }
 
 const technologies: TechnologyProps[] = [
-  { name: 'React', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Next.js', icon: <WebIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'TypeScript', icon: <IntegrationInstructionsIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'JavaScript', icon: <JavascriptIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Tailwind', icon: <CssIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Node.js', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Java', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'AWS', icon: <CloudQueueIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Vercel', icon: <CloudCircleIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Firebase', icon: <DnsIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'HTML5', icon: <HtmlIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'CSS3', icon: <CssIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Figma', icon: <DesignServicesIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Git', icon: <GitHubIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'ESLint', icon: <BuildIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Docker', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'SQL', icon: <DatabaseIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'MongoDB', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'PostgreSQL', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
-  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#60A5FA' }} /> },
+  {
+    name: 'React',
+    icon: <WebIcon sx={{ fontSize: 40, color: '#61DAFB' }} />,
+  },
+  {
+    name: 'Next.js',
+    icon: <WebIcon sx={{ fontSize: 40, color: '#000000' }} />,
+  },
+  {
+    name: 'TypeScript',
+    icon: <CodeIcon sx={{ fontSize: 40, color: '#3178C6' }} />,
+  },
+  {
+    name: 'JavaScript',
+    icon: <JavascriptIcon sx={{ fontSize: 40, color: '#F7DF1E' }} />,
+  },
+  {
+    name: 'Tailwind',
+    icon: <CssIcon sx={{ fontSize: 40, color: '#38B2AC' }} />,
+  },
+  {
+    name: 'Node.js',
+    icon: <IntegrationInstructionsIcon sx={{ fontSize: 40, color: '#339933' }} />,
+  },
+  {
+    name: 'Java',
+    icon: <CodeIcon sx={{ fontSize: 40, color: '#007396' }} />,
+  },
+  {
+    name: 'AWS',
+    icon: <CloudIcon sx={{ fontSize: 40, color: '#FF9900' }} />,
+  },
+  {
+    name: 'Vercel',
+    icon: <CloudCircleIcon sx={{ fontSize: 40, color: '#000000' }} />,
+  },
+  {
+    name: 'Firebase',
+    icon: <DnsIcon sx={{ fontSize: 40, color: '#FFCA28' }} />,
+  },
+  {
+    name: 'HTML5',
+    icon: <HtmlIcon sx={{ fontSize: 40, color: '#E34F26' }} />,
+  },
+  {
+    name: 'CSS3',
+    icon: <CssIcon sx={{ fontSize: 40, color: '#1572B6' }} />,
+  },
+  {
+    name: 'Figma',
+    icon: <DesignServicesIcon sx={{ fontSize: 40, color: '#F24E1E' }} />,
+  },
+  {
+    name: 'Git',
+    icon: <GitHubIcon sx={{ fontSize: 40, color: '#F05032' }} />,
+  },
+  {
+    name: 'ESLint',
+    icon: <BugReportIcon sx={{ fontSize: 40, color: '#4B32C3' }} />,
+  },
+  {
+    name: 'Docker',
+    icon: <StorageIcon sx={{ fontSize: 40, color: '#2496ED' }} />,
+  },
+  {
+    name: 'SQL',
+    icon: <StorageIcon sx={{ fontSize: 40, color: '#4479A1' }} />,
+  },
+  {
+    name: 'MongoDB',
+    icon: <StorageIcon sx={{ fontSize: 40, color: '#47A248' }} />,
+  },
+  {
+    name: 'PostgreSQL',
+    icon: <StorageIcon sx={{ fontSize: 40, color: '#336791' }} />,
+  },
+  {
+    name: 'Android',
+    icon: <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />,
+  },
+  {
+    name: 'Python',
+    icon: <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />,
+  },
+  {
+    name: 'Linux/Bash',
+    icon: <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />,
+  },
 ];
 
 const Technologies = () => {
@@ -97,7 +167,7 @@ const Technologies = () => {
             border: '1px solid rgba(96, 165, 250, 0.1)',
           }}
         >
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={3} justifyContent="center">
             {technologies.map((tech, index) => (
               <Grid item key={tech.name} xs={4} sm={3} md={2}>
                 <motion.div
@@ -118,6 +188,11 @@ const Technologies = () => {
                         transform: 'translateY(-4px)',
                         backgroundColor: 'rgba(96, 165, 250, 0.1)',
                       },
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      alignItems: 'center',
                     }}
                   >
                     <Box
