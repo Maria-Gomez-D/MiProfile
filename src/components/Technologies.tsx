@@ -6,6 +6,9 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import AndroidIcon from '@mui/icons-material/Android'; // For Android
 import DataObjectIcon from '@mui/icons-material/DataObject'; // For Python
 import TerminalIcon from '@mui/icons-material/Terminal'; // For Linux/Bash
+import CodeIcon from '@mui/icons-material/Code';
+import DatabaseIcon from '@mui/icons-material/Storage';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
 interface TechnologyProps {
   name: string;
@@ -20,8 +23,8 @@ const technologies: TechnologyProps[] = [
   { name: 'JavaScript', icon: '/tech-icons/javascript.svg' },
   { name: 'Tailwind', icon: '/tech-icons/tailwind.svg' },
   { name: 'Node.js', icon: '/tech-icons/nodejs.svg' },
-  { name: 'Java', icon: <StorageIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
-  { name: 'AWS', icon: <CloudIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'Java', icon: <CodeIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
+  { name: 'AWS', icon: <CloudQueueIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
   { name: 'Vercel', icon: '/tech-icons/vercel.svg' },
   { name: 'Firebase', icon: '/tech-icons/firebase.svg' },
   { name: 'HTML5', icon: '/tech-icons/html5.svg' },
@@ -30,7 +33,7 @@ const technologies: TechnologyProps[] = [
   { name: 'Git', icon: '/tech-icons/git.svg' },
   { name: 'ESLint', icon: '/tech-icons/eslint.svg' },
   { name: 'Docker', icon: '/tech-icons/docker.svg' },
-  { name: 'SQL', icon: '/tech-icons/sql.svg' },
+  { name: 'SQL', icon: <DatabaseIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
   { name: 'MongoDB', icon: '/tech-icons/mongodb.svg' },
   { name: 'PostgreSQL', icon: '/tech-icons/postgresql.svg' },
   { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#60A5FA' }} />, isMaterialIcon: true },
