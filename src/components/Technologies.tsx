@@ -1,122 +1,40 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-// Core icons
-import JavascriptIcon from '@mui/icons-material/Javascript';
-import HtmlIcon from '@mui/icons-material/Html';
-import CssIcon from '@mui/icons-material/Css';
-import StorageIcon from '@mui/icons-material/Storage';
-import CodeIcon from '@mui/icons-material/Code';
+// Material UI icons solo para los que no tienen SVG
 import AndroidIcon from '@mui/icons-material/Android';
-import TerminalIcon from '@mui/icons-material/Terminal';
 import DataObjectIcon from '@mui/icons-material/DataObject';
-// Cloud and deployment icons
-import CloudIcon from '@mui/icons-material/Cloud';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
-import CloudCircleIcon from '@mui/icons-material/CloudCircle';
-// Development tools
-import BuildIcon from '@mui/icons-material/Build';
-import BugReportIcon from '@mui/icons-material/BugReport';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
-import WebIcon from '@mui/icons-material/Web';
-import DnsIcon from '@mui/icons-material/Dns';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import TerminalIcon from '@mui/icons-material/Terminal';
 
 interface TechnologyProps {
   name: string;
-  icon: React.ReactNode;
+  icon: string | React.ReactNode;
+  isMaterialIcon?: boolean;
 }
 
 const technologies: TechnologyProps[] = [
-  {
-    name: 'React',
-    icon: <WebIcon sx={{ fontSize: 40, color: '#61DAFB' }} />,
-  },
-  {
-    name: 'Next.js',
-    icon: <WebIcon sx={{ fontSize: 40, color: '#000000' }} />,
-  },
-  {
-    name: 'TypeScript',
-    icon: <CodeIcon sx={{ fontSize: 40, color: '#3178C6' }} />,
-  },
-  {
-    name: 'JavaScript',
-    icon: <JavascriptIcon sx={{ fontSize: 40, color: '#F7DF1E' }} />,
-  },
-  {
-    name: 'Tailwind',
-    icon: <CssIcon sx={{ fontSize: 40, color: '#38B2AC' }} />,
-  },
-  {
-    name: 'Node.js',
-    icon: <IntegrationInstructionsIcon sx={{ fontSize: 40, color: '#339933' }} />,
-  },
-  {
-    name: 'Java',
-    icon: <CodeIcon sx={{ fontSize: 40, color: '#007396' }} />,
-  },
-  {
-    name: 'AWS',
-    icon: <CloudIcon sx={{ fontSize: 40, color: '#FF9900' }} />,
-  },
-  {
-    name: 'Vercel',
-    icon: <CloudCircleIcon sx={{ fontSize: 40, color: '#000000' }} />,
-  },
-  {
-    name: 'Firebase',
-    icon: <DnsIcon sx={{ fontSize: 40, color: '#FFCA28' }} />,
-  },
-  {
-    name: 'HTML5',
-    icon: <HtmlIcon sx={{ fontSize: 40, color: '#E34F26' }} />,
-  },
-  {
-    name: 'CSS3',
-    icon: <CssIcon sx={{ fontSize: 40, color: '#1572B6' }} />,
-  },
-  {
-    name: 'Figma',
-    icon: <DesignServicesIcon sx={{ fontSize: 40, color: '#F24E1E' }} />,
-  },
-  {
-    name: 'Git',
-    icon: <GitHubIcon sx={{ fontSize: 40, color: '#F05032' }} />,
-  },
-  {
-    name: 'ESLint',
-    icon: <BugReportIcon sx={{ fontSize: 40, color: '#4B32C3' }} />,
-  },
-  {
-    name: 'Docker',
-    icon: <StorageIcon sx={{ fontSize: 40, color: '#2496ED' }} />,
-  },
-  {
-    name: 'SQL',
-    icon: <StorageIcon sx={{ fontSize: 40, color: '#4479A1' }} />,
-  },
-  {
-    name: 'MongoDB',
-    icon: <StorageIcon sx={{ fontSize: 40, color: '#47A248' }} />,
-  },
-  {
-    name: 'PostgreSQL',
-    icon: <StorageIcon sx={{ fontSize: 40, color: '#336791' }} />,
-  },
-  {
-    name: 'Android',
-    icon: <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />,
-  },
-  {
-    name: 'Python',
-    icon: <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />,
-  },
-  {
-    name: 'Linux/Bash',
-    icon: <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />,
-  },
+  { name: 'React', icon: '/tech-icons/react.svg' },
+  { name: 'Next.js', icon: '/tech-icons/nextjs.svg' },
+  { name: 'TypeScript', icon: '/tech-icons/typescript.svg' },
+  { name: 'JavaScript', icon: '/tech-icons/javascript.svg' },
+  { name: 'Tailwind', icon: '/tech-icons/tailwind.svg' },
+  { name: 'Node.js', icon: '/tech-icons/nodejs.svg' },
+  { name: 'Java', icon: '/tech-icons/java.svg' },
+  { name: 'AWS', icon: '/tech-icons/aws.svg' },
+  { name: 'Vercel', icon: '/tech-icons/vercel.svg' },
+  { name: 'Firebase', icon: '/tech-icons/firebase.svg' },
+  { name: 'HTML5', icon: '/tech-icons/html5.svg' },
+  { name: 'CSS3', icon: '/tech-icons/css3.svg' },
+  { name: 'Figma', icon: '/tech-icons/figma.svg' },
+  { name: 'Git', icon: '/tech-icons/git.svg' },
+  { name: 'ESLint', icon: '/tech-icons/eslint.svg' },
+  { name: 'Docker', icon: '/tech-icons/docker.svg' },
+  { name: 'SQL', icon: '/tech-icons/sql.svg' },
+  { name: 'MongoDB', icon: '/tech-icons/mongodb.svg' },
+  { name: 'PostgreSQL', icon: '/tech-icons/postgresql.svg' },
+  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />, isMaterialIcon: true },
+  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />, isMaterialIcon: true },
+  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />, isMaterialIcon: true },
 ];
 
 const Technologies = () => {
@@ -201,7 +119,21 @@ const Technologies = () => {
                       transition={{ type: 'spring', stiffness: 300 }}
                       sx={{ mb: 1 }}
                     >
-                      {tech.icon}
+                      {tech.isMaterialIcon ? (
+                        tech.icon
+                      ) : (
+                        <motion.img
+                          src={tech.icon as string}
+                          alt={tech.name}
+                          style={{
+                            width: '40px',
+                            height: '40px',
+                            marginBottom: '4px',
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: 'spring', stiffness: 300 }}
+                        />
+                      )}
                     </Box>
                     <Typography
                       variant="body2"
