@@ -12,26 +12,33 @@ interface TechnologyProps {
   isMaterialIcon?: boolean;
 }
 
+// Función para obtener la ruta correcta del icono
+const getIconPath = (iconName: string) => {
+  // En desarrollo, process.env.PUBLIC_URL está vacío
+  // En producción, será /MiProfile
+  return `${process.env.PUBLIC_URL}/tech-icons/${iconName}`;
+};
+
 const technologies: TechnologyProps[] = [
-  { name: 'React', icon: `${process.env.PUBLIC_URL}/tech-icons/react.svg` },
-  { name: 'Next.js', icon: `${process.env.PUBLIC_URL}/tech-icons/nextjs.svg` },
-  { name: 'TypeScript', icon: `${process.env.PUBLIC_URL}/tech-icons/typescript.svg` },
-  { name: 'JavaScript', icon: `${process.env.PUBLIC_URL}/tech-icons/javascript.svg` },
-  { name: 'Tailwind', icon: `${process.env.PUBLIC_URL}/tech-icons/tailwind.svg` },
-  { name: 'Node.js', icon: `${process.env.PUBLIC_URL}/tech-icons/nodejs.svg` },
-  { name: 'Java', icon: `${process.env.PUBLIC_URL}/tech-icons/java.svg` },
-  { name: 'AWS', icon: `${process.env.PUBLIC_URL}/tech-icons/aws.svg` },
-  { name: 'Vercel', icon: `${process.env.PUBLIC_URL}/tech-icons/vercel.svg` },
-  { name: 'Firebase', icon: `${process.env.PUBLIC_URL}/tech-icons/firebase.svg` },
-  { name: 'HTML5', icon: `${process.env.PUBLIC_URL}/tech-icons/html5.svg` },
-  { name: 'CSS3', icon: `${process.env.PUBLIC_URL}/tech-icons/css3.svg` },
-  { name: 'Figma', icon: `${process.env.PUBLIC_URL}/tech-icons/figma.svg` },
-  { name: 'Git', icon: `${process.env.PUBLIC_URL}/tech-icons/git.svg` },
-  { name: 'ESLint', icon: `${process.env.PUBLIC_URL}/tech-icons/eslint.svg` },
-  { name: 'Docker', icon: `${process.env.PUBLIC_URL}/tech-icons/docker.svg` },
-  { name: 'SQL', icon: `${process.env.PUBLIC_URL}/tech-icons/sql.svg` },
-  { name: 'MongoDB', icon: `${process.env.PUBLIC_URL}/tech-icons/mongodb.svg` },
-  { name: 'PostgreSQL', icon: `${process.env.PUBLIC_URL}/tech-icons/postgresql.svg` },
+  { name: 'React', icon: getIconPath('react.svg') },
+  { name: 'Next.js', icon: getIconPath('nextjs.svg') },
+  { name: 'TypeScript', icon: getIconPath('typescript.svg') },
+  { name: 'JavaScript', icon: getIconPath('javascript.svg') },
+  { name: 'Tailwind', icon: getIconPath('tailwind.svg') },
+  { name: 'Node.js', icon: getIconPath('nodejs.svg') },
+  { name: 'Java', icon: getIconPath('java.svg') },
+  { name: 'AWS', icon: getIconPath('aws.svg') },
+  { name: 'Vercel', icon: getIconPath('vercel.svg') },
+  { name: 'Firebase', icon: getIconPath('firebase.svg') },
+  { name: 'HTML5', icon: getIconPath('html5.svg') },
+  { name: 'CSS3', icon: getIconPath('css3.svg') },
+  { name: 'Figma', icon: getIconPath('figma.svg') },
+  { name: 'Git', icon: getIconPath('git.svg') },
+  { name: 'ESLint', icon: getIconPath('eslint.svg') },
+  { name: 'Docker', icon: getIconPath('docker.svg') },
+  { name: 'SQL', icon: getIconPath('sql.svg') },
+  { name: 'MongoDB', icon: getIconPath('mongodb.svg') },
+  { name: 'PostgreSQL', icon: getIconPath('postgresql.svg') },
   { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />, isMaterialIcon: true },
   { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />, isMaterialIcon: true },
   { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />, isMaterialIcon: true },
