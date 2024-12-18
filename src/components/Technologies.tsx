@@ -1,51 +1,43 @@
 import React from 'react';
 import { Box, Container, Typography, Paper, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
-// Material UI icons solo para los que no tienen SVG
+// Material UI icons
 import AndroidIcon from '@mui/icons-material/Android';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import TerminalIcon from '@mui/icons-material/Terminal';
 
 interface TechnologyProps {
   name: string;
-  icon: string | React.ReactNode;
+  iconPath: string;
   isMaterialIcon?: boolean;
 }
 
-// Función para obtener la ruta correcta del icono
-const getIconPath = (iconName: string) => {
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://maria-gomez-d.github.io/MiProfile'
-    : '';
-  return `${baseUrl}/tech-icons/${iconName}`;
-};
-
 const technologies: TechnologyProps[] = [
-  { name: 'React', icon: getIconPath('react.svg') },
-  { name: 'Next.js', icon: getIconPath('nextjs.svg') },
-  { name: 'TypeScript', icon: getIconPath('typescript.svg') },
-  { name: 'JavaScript', icon: getIconPath('javascript.svg') },
-  { name: 'Tailwind', icon: getIconPath('tailwind.svg') },
-  { name: 'Node.js', icon: getIconPath('nodejs.svg') },
-  { name: 'Java', icon: getIconPath('java.svg') },
-  { name: 'AWS', icon: getIconPath('aws.svg') },
-  { name: 'Vercel', icon: getIconPath('vercel.svg') },
-  { name: 'Firebase', icon: getIconPath('firebase.svg') },
-  { name: 'HTML5', icon: getIconPath('html5.svg') },
-  { name: 'CSS3', icon: getIconPath('css3.svg') },
-  { name: 'Figma', icon: getIconPath('figma.svg') },
-  { name: 'Git', icon: getIconPath('git.svg') },
-  { name: 'ESLint', icon: getIconPath('eslint.svg') },
-  { name: 'Docker', icon: getIconPath('docker.svg') },
-  { name: 'SQL', icon: getIconPath('sql.svg') },
-  { name: 'MongoDB', icon: getIconPath('mongodb.svg') },
-  { name: 'PostgreSQL', icon: getIconPath('postgresql.svg') },
-  { name: 'Android', icon: <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />, isMaterialIcon: true },
-  { name: 'Python', icon: <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />, isMaterialIcon: true },
-  { name: 'Linux/Bash', icon: <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />, isMaterialIcon: true },
+  { name: 'React', iconPath: process.env.PUBLIC_URL + '/tech-icons/react.svg' },
+  { name: 'Next.js', iconPath: process.env.PUBLIC_URL + '/tech-icons/nextjs.svg' },
+  { name: 'TypeScript', iconPath: process.env.PUBLIC_URL + '/tech-icons/typescript.svg' },
+  { name: 'JavaScript', iconPath: process.env.PUBLIC_URL + '/tech-icons/javascript.svg' },
+  { name: 'Tailwind', iconPath: process.env.PUBLIC_URL + '/tech-icons/tailwind.svg' },
+  { name: 'Node.js', iconPath: process.env.PUBLIC_URL + '/tech-icons/nodejs.svg' },
+  { name: 'Java', iconPath: process.env.PUBLIC_URL + '/tech-icons/java.svg' },
+  { name: 'AWS', iconPath: process.env.PUBLIC_URL + '/tech-icons/aws.svg' },
+  { name: 'Vercel', iconPath: process.env.PUBLIC_URL + '/tech-icons/vercel.svg' },
+  { name: 'Firebase', iconPath: process.env.PUBLIC_URL + '/tech-icons/firebase.svg' },
+  { name: 'HTML5', iconPath: process.env.PUBLIC_URL + '/tech-icons/html5.svg' },
+  { name: 'CSS3', iconPath: process.env.PUBLIC_URL + '/tech-icons/css3.svg' },
+  { name: 'PostgreSQL', iconPath: process.env.PUBLIC_URL + '/tech-icons/postgresql.svg' },
+  { name: 'Android', iconPath: '', isMaterialIcon: true },
+  { name: 'Python', iconPath: '', isMaterialIcon: true },
+  { name: 'Linux/Bash', iconPath: '', isMaterialIcon: true },
 ];
 
 const Technologies = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, techName: string) => {
+    console.error(`Error loading icon for ${techName}:`, e);
+    const img = e.target as HTMLImageElement;
+    console.log('Attempted URL:', img.src);
+  };
+
   return (
     <Box
       id="technologies"
@@ -128,18 +120,24 @@ const Technologies = () => {
                       sx={{ mb: 1 }}
                     >
                       {tech.isMaterialIcon ? (
-                        tech.icon
+                        tech.name === 'Android' ? (
+                          <AndroidIcon sx={{ fontSize: 40, color: '#3DDC84' }} />
+                        ) : tech.name === 'Python' ? (
+                          <DataObjectIcon sx={{ fontSize: 40, color: '#3776AB' }} />
+                        ) : (
+                          <TerminalIcon sx={{ fontSize: 40, color: '#FCC624' }} />
+                        )
                       ) : (
-                        <motion.img
-                          src={tech.icon as string}
+                        <Box
+                          component="img"
+                          src={tech.iconPath}
                           alt={tech.name}
-                          style={{
+                          onError={(e) => handleImageError(e, tech.name)}
+                          sx={{
                             width: '40px',
                             height: '40px',
                             marginBottom: '4px',
                           }}
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ type: 'spring', stiffness: 300 }}
                         />
                       )}
                     </Box>

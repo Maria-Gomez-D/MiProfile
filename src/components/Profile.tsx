@@ -42,7 +42,7 @@ const Profile = () => {
             }}
           >
             <Avatar
-              src="/path-to-your-photo.jpg"
+              src={process.env.PUBLIC_URL + '/Avatar.jpg'}
               alt="Profile"
               sx={{
                 width: 200,
@@ -88,8 +88,7 @@ const Profile = () => {
                 transition={{ delay: 0.4 }}
                 sx={{ mb: 3, color: 'text.secondary' }}
               >
-                Passionate about creating beautiful and intuitive user interfaces.
-                Specialized in React and modern web technologies.
+                Driven by a passion for crafting tailored software solutions to solve complex problems. With a background in customer engagement and foundation in software development, specialized in understanding unique client needs and delivering innovative, user-focused applications.
               </Typography>
               <Box
                 component={motion.div}

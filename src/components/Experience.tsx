@@ -4,17 +4,23 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    title: 'Software Developer',
-    company: 'Company Name',
-    period: '2022 - Present',
-    description: 'Description of your responsibilities and achievements',
+    title: 'Business Account Manager',
+    company: 'Cristales de Seguridad Constructores Ltda',
+    period: '2015 - 2022',
+    description: 'Experienced in streamlining business processes through software solutions, data automation, and Agile practices, with strong skills in problem-solving, cross-functional collaboration, and optimizing workflows to drive efficiency and innovation.',
   },
   {
-    title: 'Mechatronic Engineer',
-    company: 'Company Name',
-    period: '2020 - 2022',
-    description: 'Description of your responsibilities and achievements',
+    title: 'Business Account Manager',
+    company: 'Proyectos Integrales - PIL Automation',
+    period: '2012 - 2015',
+    description: 'Designed and implemented software solutions to meet client needs, improving efficiency and accuracy through process automation, technical support, data analysis, and strategic decision-making.',
   },
+  {
+    title: 'Project Engineer',
+    company: 'Proyectos Integrales - PIL Automation',
+    period: '2011 - 2012',
+    description: 'Programmed and optimized PLCs and HMIs using Rockwell Automation tools, applying OOP principles, electrical schematics design, and process automation to enhance efficiency and ensure reliable system performance.',
+  }
   // Add more experiences as needed
 ];
 
