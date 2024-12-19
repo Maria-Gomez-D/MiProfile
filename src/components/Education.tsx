@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SchoolIcon from '@mui/icons-material/School';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-interface Education {
+interface EducationItem {
   degree: string;
   institution: string;
   location: string;
@@ -12,7 +12,7 @@ interface Education {
   description: string;
 }
 
-const educationData: Education[] = [
+const educationData: EducationItem[] = [
   {
     degree: 'Bachelor in Mechatronic Engineering',
     institution: 'Universidad Militar Nueva Granada',

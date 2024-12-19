@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Paper, Tooltip } from '@mui/material';
+import { IconButton, Paper, Tooltip } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';

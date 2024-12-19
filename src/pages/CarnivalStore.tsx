@@ -3,14 +3,12 @@ import {
   Container,
   Typography,
   Box,
-  Chip,
   Grid,
   Paper,
   List,
   ListItem,
   ListItemText,
   Button,
-  Divider,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

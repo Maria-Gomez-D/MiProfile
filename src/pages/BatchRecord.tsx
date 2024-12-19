@@ -3,7 +3,6 @@ import {
   Container,
   Typography,
   Box,
-  Chip,
   Grid,
   Paper,
   List,
