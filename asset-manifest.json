@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MiProfile/static/css/main.e6c13ad2.css",
+    "main.js": "/MiProfile/static/js/main.187cccd8.js",
+    "static/js/453.c37a0635.chunk.js": "/MiProfile/static/js/453.c37a0635.chunk.js",
+    "index.html": "/MiProfile/index.html",
+    "main.e6c13ad2.css.map": "/MiProfile/static/css/main.e6c13ad2.css.map",
+    "main.187cccd8.js.map": "/MiProfile/static/js/main.187cccd8.js.map",
+    "453.c37a0635.chunk.js.map": "/MiProfile/static/js/453.c37a0635.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.187cccd8.js"
+  ]
+}
