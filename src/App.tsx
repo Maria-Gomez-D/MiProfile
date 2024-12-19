@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider, createTheme, CssBaseline, Container } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DockNavigation from './components/DockNavigation';
 import Profile from './components/Profile';
 import Projects from './components/Projects';
@@ -7,6 +8,8 @@ import Technologies from './components/Technologies';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import BatchRecord from './pages/BatchRecord';
+import CarnivalStore from './pages/CarnivalStore';
 
 const theme = createTheme({
   palette: {
@@ -92,15 +95,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg" sx={{ pb: 10 }}>
-        <Profile />
-        <Projects />
-        <Technologies />
-        <Experience />
-        <Education />
-        <Contact />
-      </Container>
-      <DockNavigation />
+      <Router basename="/MiProfile">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <DockNavigation />
+              <Profile />
+              <Projects />
+              <Technologies />
+              <Experience />
+              <Education />
+              <Contact />
+            </>
+          } />
+          <Route path="/batchrecord" element={<BatchRecord />} />
+          <Route path="/carnivalstore" element={<CarnivalStore />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
