@@ -13,7 +13,7 @@ interface TechnologyProps {
 }
 
 const technologies: TechnologyProps[] = [
-  { name: 'React', iconPath: process.env.PUBLIC_URL + '/tech-icons/react.svg' },
+  { name: 'React', iconPath: process.env.PUBLIC_URL + '/tech-icons/react.png' },
   { name: 'Next.js', iconPath: process.env.PUBLIC_URL + '/tech-icons/nextjs.svg' },
   { name: 'TypeScript', iconPath: process.env.PUBLIC_URL + '/tech-icons/typescript.svg' },
   { name: 'JavaScript', iconPath: process.env.PUBLIC_URL + '/tech-icons/javascript.svg' },
@@ -21,6 +21,15 @@ const technologies: TechnologyProps[] = [
   { name: 'Node.js', iconPath: process.env.PUBLIC_URL + '/tech-icons/nodejs.svg' },
   { name: 'Java', iconPath: process.env.PUBLIC_URL + '/tech-icons/java.svg' },
   { name: 'AWS', iconPath: process.env.PUBLIC_URL + '/tech-icons/aws.svg' },
+  { name: 'Azure', iconPath: process.env.PUBLIC_URL + '/tech-icons/azure.png' },
+  { name: 'Power BI', iconPath: process.env.PUBLIC_URL + '/tech-icons/powerbi.png' },
+  { name: 'Prisma', iconPath: process.env.PUBLIC_URL + '/tech-icons/prisma.svg' },
+  { name: 'JMeter', iconPath: process.env.PUBLIC_URL + '/tech-icons/jmeter.svg' },
+  { name: 'Selenium', iconPath: process.env.PUBLIC_URL + '/tech-icons/selenium.svg' },
+  { name: 'Postman', iconPath: process.env.PUBLIC_URL + '/tech-icons/postman.svg' },
+  { name: 'Jest', iconPath: process.env.PUBLIC_URL + '/tech-icons/jest.svg' },
+  { name: 'Visio', iconPath: process.env.PUBLIC_URL + '/tech-icons/visio.png' },
+  { name: 'GitHub', iconPath: process.env.PUBLIC_URL + '/tech-icons/github.svg' },
   { name: 'Vercel', iconPath: process.env.PUBLIC_URL + '/tech-icons/vercel.svg' },
   { name: 'Firebase', iconPath: process.env.PUBLIC_URL + '/tech-icons/firebase.svg' },
   { name: 'HTML5', iconPath: process.env.PUBLIC_URL + '/tech-icons/html5.svg' },
